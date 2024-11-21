@@ -14,7 +14,7 @@ export class CustomHttpExceptionFilter implements ExceptionFilter {
     const status = exception.getStatus();
 
     response.status(status).json({
-      statusCode: `FXQL-${status}`,
+      code: `FXQL-${status}`,
       message: exception.getResponse()['message'],
     });
   }
