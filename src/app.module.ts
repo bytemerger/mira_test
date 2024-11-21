@@ -4,6 +4,7 @@ import * as convict from 'convict';
 import { schema } from 'config.schema';
 import { ExchangeModule } from './modules/exchange/exchange.module';
 import { PrismaModule } from './lib/prisma/prisma.module';
+import { HealthModule } from './modules/healthz/healthz.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { PrismaModule } from './lib/prisma/prisma.module';
     }),
     PrismaModule,
     ExchangeModule,
+    HealthModule
   ],
   controllers: [],
 })
