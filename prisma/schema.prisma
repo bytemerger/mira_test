@@ -14,10 +14,10 @@ datasource db {
 }
 
 model ExchangeStatementEntry {
-  id                  Int    @id @default(autoincrement())
-  sourceCurrency      String
-  destinationCurrency String
-  buyPrice            String
-  sellPrice           String
-  capAmount           String
+  EntryId             Int    @id @default(autoincrement())
+  SourceCurrency      String
+  DestinationCurrency String
+  BuyPrice            Float
+  SellPrice           Float
+  CapAmount           Int
 }

@@ -46,7 +46,7 @@ export function FXQLParser(str: string) {
     // make sure length is 3
     if (ratesStringArr.length !== 3) {
       throw new FXQLParserError(
-        `invalid fxl statement at at ${index + 1} fxl string with currency - ${sourceCurrency}-${destinationCurrency}... rate and cap are exceeding expectations`,
+        `invalid fxl statement with currency - ${sourceCurrency}-${destinationCurrency} at fxl string of index - ${index + 1} ... rate and cap are exceeding expectations`,
       );
     }
     const [mainStr, buyRate, sellRate, cap, ...rest] = [
@@ -80,9 +80,9 @@ export function FXQLParser(str: string) {
     const currencyPair = {
       SourceCurrency: sourceCurrency,
       DestinationCurrency: destinationCurrency,
-      BuyPrice: buyRate,
-      SellPrice: sellRate,
-      CapAmount: cap,
+      BuyPrice: parseFloat(buyRate),
+      SellPrice: parseFloat(sellRate),
+      CapAmount: parseInt(cap),
     };
 
     // Add the object to the parsed data array
