@@ -20,8 +20,6 @@ export class ExchangeController {
   async createExchange(@Body() createExchangeEntry: CreateExchangeEntriesDto) {
     try {
       const parsedData = FXQLParser(createExchangeEntry.FXQL);
-      console.log(parsedData);
-      console.log(createExchangeEntry);
       const storedStatements = await this.exchangeService.create(parsedData);
       return {
         message: 'FXQL Statement Parsed Successfully.',
