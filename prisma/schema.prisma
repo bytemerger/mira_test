@@ -10,5 +10,14 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = env("DB_URL")
+}
+
+model ExchangeStatementEntry {
+  id                  Int    @id @default(autoincrement())
+  sourceCurrency      String
+  destinationCurrency String
+  buyPrice            String
+  sellPrice           String
+  capAmount           String
 }

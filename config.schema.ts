@@ -12,7 +12,7 @@ export const schema = {
           doc: 'Connection URL',
           format: String,
           default: "",
-          env: 'DB_APP_URL',
+          env: 'DB_URL',
         },
     },
 }
