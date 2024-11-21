@@ -5,8 +5,8 @@ import {
   Post,
   UseFilters,
 } from '@nestjs/common';
-import { CustomHttpExceptionFilter } from 'src/lib/exception/custom.exception.filter';
-import { FXQLParserError } from 'src/lib/exception/FXQLParser.error';
+import { CustomHttpExceptionFilter } from '../../lib/exception/custom.exception.filter';
+import { FXQLParserError } from '../../lib/exception/FXQLParser.error';
 import { FXQLParser } from '../../lib/utils';
 import { CreateExchangeEntriesDto } from './dto/createExchangeEntries.dto';
 import { ExchangeService } from './exchange.service';
