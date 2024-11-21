@@ -1,7 +1,5 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import * as convict from 'convict';
 import { schema } from 'config.schema';
 import { ExchangeModule } from './modules/exchange/exchange.module';
@@ -21,7 +19,6 @@ import { PrismaModule } from './lib/prisma/prisma.module';
     PrismaModule,
     ExchangeModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
 })
 export class AppModule {}
