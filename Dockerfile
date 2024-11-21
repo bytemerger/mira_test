@@ -9,9 +9,9 @@ RUN npm ci --omit=optional
 
 COPY . .
 
-RUN npm run test
-
 RUN npx prisma generate
+
+RUN npm run test
 
 RUN npm run build
 
