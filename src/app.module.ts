@@ -19,7 +19,7 @@ import { PrismaModule } from './lib/prisma/prisma.module';
       },
     }),
     PrismaModule,
-    ExchangeModule
+    ExchangeModule,
   ],
   controllers: [AppController],
   providers: [AppService],

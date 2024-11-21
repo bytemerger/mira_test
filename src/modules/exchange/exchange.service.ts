@@ -6,9 +6,7 @@ import { PrismaService } from '../../lib/prisma/prisma.service';
 export class ExchangeService {
   constructor(private readonly prismaService: PrismaService) {}
 
-  async create(
-    exchangeEntries: ExchangeStatementEntry[],
-  ): Promise<void> {
+  async create(exchangeEntries: ExchangeStatementEntry[]): Promise<void> {
     // return this.prismaService.save();
   }
 }
