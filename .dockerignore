@@ -1,0 +1,13 @@
+.dockerignore
+.git
+.gitlab-ci.yml
+Dockerfile
+README.md
+ci
+coverage
+deploy
+development
+dist
+helmfile.yaml
+tsconfig.production.tsbuildinfo
+node_modules/
