@@ -1,51 +1,21 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
-
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
+A task to implement a Foreign Exchange Query Language (FXQL) Statement Parser using nestjs and typescript
 ## Project setup
 
 ```bash
-$ npm install
+$ docker build -t mira .
+$ docker run --env-file /path/to/env/file mira 
 ```
 
-## Compile and run the project
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
+## env
+You can find an env example at .env.example
 
 ## Run tests
+
+Tests are run in a docker build process in the development phase to maintain a good delivery culture
+
+You can also run test outside of this scenario with the following commands
 
 ```bash
 # unit tests
@@ -58,42 +28,261 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Deployment
+## Resources and API DOCS
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+# mira-test
+
+
+
+<!--- If we have only one group/collection, then no need for the "ungrouped" heading -->
+1. [Parse FXQL](#1-parse-fxql)
+   1. [Parse FXQL - error with string](#i-example-request-parse-fxql---error-with-string)
+   1. [Parse FXQL - success 1 statement](#ii-example-request-parse-fxql---success-1-statement)
+   1. [Parse FXQL - success 3 statements](#iii-example-request-parse-fxql---success-3-statements)
+   1. [Parse FXQL - invalid Buy rate](#iv-example-request-parse-fxql---invalid-buy-rate)
+1. [Check Healthz](#2-check-healthz)
+   1. [health success response](#i-example-request-health-success-response)
+
+
+
+## Endpoints
+
+
+--------
+
+
+
+### 1. Parse FXQL
+
+
+
+***Endpoint:***
 
 ```bash
-$ npm install -g mau
-$ mau deploy
+Method: GET
+Type: 
+URL: 
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
 
-## Resources
 
-Check out a few resources that may come in handy when working with NestJS:
+***More example Requests/Responses:***
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
 
-## Support
+#### I. Example Request: Parse FXQL - error with string
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+***Body:***
 
-## License
+```js        
+{
+    "FXQL": "USD-GBP {\\n  BUY rr\\n  SELL 0.90\\n  \\n CAP 10000\\n}\\n\\nEUR-JPY {\\n  BUY 145.20\\n  SELL 146.50\\n  CAP 50000\\n}\\n\\nNGN-USD {\\n  BUY 0.0022\\n  SELL 0.0023\\n  CAP 2000000\\n}"
+}
+```
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+
+
+#### I. Example Response: Parse FXQL - error with string
+```js
+{
+    "code": "FXQL-400",
+    "message": "invalid fxl statement with currency - USD-GBP at fxl string of index - 1 ... rate and cap are exceeding expectations"
+}
+```
+
+
+***Status Code:*** 400
+
+<br>
+
+
+
+#### II. Example Request: Parse FXQL - success 1 statement
+
+
+
+***Body:***
+
+```js        
+{
+    "FXQL": "USD-GBP {\\n BUY 100\\n SELL 200\\n CAP 93800\\n}"
+}
+```
+
+
+
+#### II. Example Response: Parse FXQL - success 1 statement
+```js
+{
+    "message": "FXQL Statement Parsed Successfully.",
+    "code": "FXQL-200",
+    "data": [
+        {
+            "EntryId": 1,
+            "SourceCurrency": "USD",
+            "DestinationCurrency": "GBP",
+            "BuyPrice": 100,
+            "SellPrice": 200,
+            "CapAmount": 93800
+        }
+    ]
+}
+```
+
+
+***Status Code:*** 201
+
+<br>
+
+
+
+#### III. Example Request: Parse FXQL - success 3 statements
+
+
+
+***Body:***
+
+```js        
+{
+    "FXQL": "USD-GBP {\\n  BUY 0.85\\n  SELL 0.90\\n  CAP 10000\\n}\\n\\nEUR-JPY {\\n  BUY 145.20\\n  SELL 146.50\\n  CAP 50000\\n}\\n\\nNGN-USD {\\n  BUY 0.0022\\n  SELL 0.0023\\n  CAP 2000000\\n}"
+}
+```
+
+
+
+#### III. Example Response: Parse FXQL - success 3 statements
+```js
+{
+    "message": "FXQL Statement Parsed Successfully.",
+    "code": "FXQL-200",
+    "data": [
+        {
+            "EntryId": 2,
+            "SourceCurrency": "USD",
+            "DestinationCurrency": "GBP",
+            "BuyPrice": 0.85,
+            "SellPrice": 0.9,
+            "CapAmount": 10000
+        },
+        {
+            "EntryId": 3,
+            "SourceCurrency": "EUR",
+            "DestinationCurrency": "JPY",
+            "BuyPrice": 145.2,
+            "SellPrice": 146.5,
+            "CapAmount": 50000
+        },
+        {
+            "EntryId": 4,
+            "SourceCurrency": "NGN",
+            "DestinationCurrency": "USD",
+            "BuyPrice": 0.0022,
+            "SellPrice": 0.0023,
+            "CapAmount": 2000000
+        }
+    ]
+}
+```
+
+
+***Status Code:*** 201
+
+<br>
+
+
+
+#### IV. Example Request: Parse FXQL - invalid Buy rate
+
+
+
+***Body:***
+
+```js        
+{
+    "FXQL": "USD-GBP {\\n  BUY rt\\n  SELL 0.90\\n  CAP 10000\\n}"
+}
+```
+
+
+
+#### IV. Example Response: Parse FXQL - invalid Buy rate
+```js
+{
+    "code": "FXQL-400",
+    "message": "Invalid Buy rate for USD-GBP"
+}
+```
+
+
+***Status Code:*** 400
+
+<br>
+
+
+
+### 2. Check Healthz
+
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: RAW
+URL: {{base_url}}/agreements/5366f8d5-1069-4a9a-94db-aed3bdbb6128
+```
+
+
+***Headers:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| Authorization | {{auth_token}} |  |
+
+
+
+***Body:***
+
+```js        
+{
+    "content": "## Good morning \n This is like the completion of what we really wanted"
+}
+```
+
+
+
+***More example Requests/Responses:***
+
+
+#### I. Example Request: health success response
+
+
+***Headers:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| Authorization | {{auth_token}} |  |
+
+
+
+#### I. Example Response: health success response
+```js
+{
+    "message": "Api is live",
+    "code": "FXQL-200"
+}
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
+---
+[Back to top](#mira-test)
+
+>Generated at 2024-11-21 11:27:57 by [docgen](https://github.com/thedevsaddam/docgen)
