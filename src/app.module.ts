@@ -4,6 +4,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import * as convict from 'convict';
 import { schema } from 'config.schema';
+import { ExchangeModule } from './modules/exchange/exchange.module';
+import { PrismaModule } from './lib/prisma/prisma.module';
 
 @Module({
   imports: [
@@ -16,6 +18,8 @@ import { schema } from 'config.schema';
           .get() as Record<string, unknown>;
       },
     }),
+    PrismaModule,
+    ExchangeModule
   ],
   controllers: [AppController],
   providers: [AppService],

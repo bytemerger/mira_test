@@ -8,7 +8,7 @@ export class ExchangeService {
 
   async create(
     exchangeEntries: ExchangeStatementEntry[],
-  ): Promise<ExchangeStatementEntry> {
-    return this.prismaService.save();
+  ): Promise<void> {
+    // return this.prismaService.save();
   }
 }
