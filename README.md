@@ -60,9 +60,19 @@ $ npm run test:cov
 ***Endpoint:***
 
 ```bash
-Method: GET
-Type: 
-URL: 
+Method: POST
+Type: RAW
+URL: {{base_url}}/fxql-statements
+```
+
+
+
+***Body:***
+
+```js        
+{
+    "FXQL": "USD-GBP {\\n  BUY rt\\n  SELL 0.90\\n  CAP 10000\\n}"
+}
 ```
 
 
@@ -132,7 +142,7 @@ URL:
 ```
 
 
-***Status Code:*** 201
+***Status Code:*** 200
 
 <br>
 
@@ -231,7 +241,7 @@ URL:
 ```bash
 Method: GET
 Type: RAW
-URL: {{base_url}}/agreements/5366f8d5-1069-4a9a-94db-aed3bdbb6128
+URL: {{base_url}}/healthz
 ```
 
 
@@ -239,33 +249,10 @@ URL: {{base_url}}/agreements/5366f8d5-1069-4a9a-94db-aed3bdbb6128
 
 | Key | Value | Description |
 | --- | ------|-------------|
-| Authorization | {{auth_token}} |  |
-
-
-
-***Body:***
-
-```js        
-{
-    "content": "## Good morning \n This is like the completion of what we really wanted"
-}
-```
 
 
 
 ***More example Requests/Responses:***
-
-
-#### I. Example Request: health success response
-
-
-***Headers:***
-
-| Key | Value | Description |
-| --- | ------|-------------|
-| Authorization | {{auth_token}} |  |
-
-
 
 #### I. Example Response: health success response
 ```js
@@ -284,5 +271,3 @@ URL: {{base_url}}/agreements/5366f8d5-1069-4a9a-94db-aed3bdbb6128
 
 ---
 [Back to top](#mira-test)
-
->Generated at 2024-11-21 11:27:57 by [docgen](https://github.com/thedevsaddam/docgen)
